@@ -3,34 +3,43 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     </head>
     <body>
-        <!--<h1>Hello World</h1>
-        <div>
+        <!-- <h1>Hello World</h1>
+        <div class="container">
             <p id="olaNome">Olá </p>
             <p id="teste"></p>
             <form>
                 <input id="nome" type="text" name="" value="" placeholder="Digite aqui o seu nome">
-                <button type="button" name="button" onclick="printarNome()">Me clique!</button>
-                <button type="button" onclick="postFormulario()">Salvar</button>
+                <div class="button-container">
+                    <button type="button" name="button" onclick="printarNome()">Me clique!</button>
+                    <button class="btnSalvar" type="button" onclick="postFormulario()">Salvar</button>
+                </div>
             </form>
-        </div>-->
-        <div> 
-            <form onsubmit="">
-                <div>
-                    <input type="text" name="Nome" value="" placeholder="Digite o nome">
+        </div> -->
+        <div>
+            <form id="formMusica">
+                <div class="container">
+                    <h2>Nova Música</h2>
+                    <div>
+                        <input id="NomeMusica" type="text" name="Nome" value="" placeholder="Digite o nome">
+                    </div>
+                    <div>
+                        <input id="NomeAlbum" type="text" name="Album" value="" placeholder="Digite o nome do Álbum">
+                    </div>
+                    <div>
+                        <input id="AutorAlbum" type="text" name="Autor" value="" placeholder="Digite o Autor do Álbum">
+                    </div>
+                    <div>
+                        <input id="AnoAlbum" type="number" name="Ano" value="" placeholder="Digite o Ano do Álbum">
+                    </div>
+                    <button type="submit">Salvar Dados</button>
                 </div>
-                <div>
-                    <input type="text" name="Album" value="" placeholder="Digite o nome do Álbum">
-                </div>
-                <div>
-                    <input type="text" name="Autor" value="" placeholder="Digite o Autor do Álbum">
-                </div>
-                <div>
-                    <input type="number" name="Ano" value="" placeholder="Digite o Ano do Álbum">
-                </div>
-                <button type="submit">Salvar Dados</button>
             </form>
         </div>
 

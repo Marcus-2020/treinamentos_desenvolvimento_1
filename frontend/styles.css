@@ -1,0 +1,78 @@
+/* h1 {
+    color: purple;
+}
+
+button {
+    background-color: purple;
+    color: white;
+    border: 1px solid purple;
+    border-radius: 10%;
+    padding: 5px;
+}
+
+.container {
+    margin-bottom: 30px;
+    padding: 5px 5px 5px 5px;
+    border: 1px solid purple;
+    background-color: azure;
+}
+
+.button-container {
+    margin-top: 10px;
+    border: 1px solid purple;
+}
+
+.btnSalvar {
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: rgb(78, 2, 78);
+    color: white;
+    border: 1px solid rgb(78, 2, 78);
+    cursor: pointer;
+} */
+
+html {
+    font: 400 16px 'Roboto', sans-serif;
+}
+
+h2 {
+    color: purple;
+    margin: 0px 0px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 280px;
+    max-width: 300px;
+    border: 2px solid purple;
+    border-radius: 4px;
+    margin: auto;
+    padding: 10px;
+}
+
+.container input {
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.container button {
+    background-color: purple;
+    color: white;
+    border: 1px solid purple;
+    border-radius: 8px;
+    width: 70%;
+    padding: 8px;
+}
+
+.container button:hover {
+    background-color: rgb(71, 1, 71);
+    color: white;
+    cursor: pointer;
+}
