@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using CadastroMusicas.Api.Entidades;
+using CadastroMusicas.Api.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,20 +9,17 @@ builder.Services.AddCors(options => options.AddDefaultPolicy(builder =>
     builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
 }));
 
+builder.Services.AddScoped<MusicaRepository>();
+
 var app = builder.Build();
 
 app.UseCors();
 
 app.MapGet("/", () => "Hello World!");
 
-app.MapPost("/api/musica", ([FromBody]Musica musica) => musica);
+app.MapPost("/api/musica", (MusicaRepository repository, [FromBody]Musica musica) => {
+    repository.Add(musica);
+    return musica;
+});
 
 app.Run();
-
-public class Musica
-{
-    public string? nome { get; set; }
-    public string? nomeAlbum { get; set; }
-    public string? autorAlbum { get; set; }
-    public int anoAlbum { get; set; }
-}
