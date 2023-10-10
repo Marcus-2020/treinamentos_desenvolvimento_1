@@ -1,4 +1,4 @@
-namespace CadastroMusicas.Api.Entidades
+namespace CadastroMusica.Api.Entidades
 {
     public class Musica
     {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using CadastroMusicas.Api.Entidades;
-using CadastroMusicas.Api.Data;
+using CadastroMusica.Api.Entidades;
+using CadastroMusicas.Api.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +17,7 @@ app.UseCors();
 
 app.MapGet("/", () => "Hello World!");
 
-app.MapPost("/api/musica", (MusicaRepository repository, [FromBody]Musica musica) => {
+app.MapPost("/api/musica", ([FromServices]MusicaRepository repository, [FromBody]Musica musica) => {
     repository.Add(musica);
     return musica;
 });
