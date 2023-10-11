@@ -1,38 +1,3 @@
-/* h1 {
-    color: purple;
-}
-
-button {
-    background-color: purple;
-    color: white;
-    border: 1px solid purple;
-    border-radius: 10%;
-    padding: 5px;
-}
-
-.container {
-    margin-bottom: 30px;
-    padding: 5px 5px 5px 5px;
-    border: 1px solid purple;
-    background-color: azure;
-}
-
-.button-container {
-    margin-top: 10px;
-    border: 1px solid purple;
-}
-
-.btnSalvar {
-    margin-left: 10px;
-}
-
-button:hover {
-    background-color: rgb(78, 2, 78);
-    color: white;
-    border: 1px solid rgb(78, 2, 78);
-    cursor: pointer;
-} */
-
 html {
     font: 400 16px 'Roboto', sans-serif;
 }
@@ -42,7 +7,7 @@ h2 {
     margin: 0px 0px;
 }
 
-.container {
+.custom-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,14 +20,14 @@ h2 {
     padding: 10px;
 }
 
-.container input {
+.custom-container input {
     padding: 4px;
     border: 1px solid black;
     border-radius: 4px;
     width: 100%;
 }
 
-.container button {
+.custom-container button {
     background-color: purple;
     color: white;
     border: 1px solid purple;
@@ -71,8 +36,13 @@ h2 {
     padding: 8px;
 }
 
-.container button:hover {
+.custom-container button:hover {
     background-color: rgb(71, 1, 71);
     color: white;
     cursor: pointer;
+}
+
+.thead-purple {
+    background-color: purple;
+    color: white;
 }

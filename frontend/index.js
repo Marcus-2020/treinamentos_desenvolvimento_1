@@ -1,20 +1,3 @@
-// function testarAlerta() {
-//     alert("Testando o alerta");
-// }
-
-// function printarNome() {
-//     let nome = document.querySelector("#nome").value;
-//     const p = document.querySelector("#olaNome");
-
-//     p.innerHTML = `Olá, ${nome}`;
-// }
-
-// function postFormulario() {
-//     printarNome();
-//     const p = document.querySelector("#teste").innerHTML = "Nome salvo com sucesso!";
-//     document.querySelector("#nome").value = "";
-// }
-
 axios.defaults.baseURL = 'http://localhost:5259/api';
 
 document.querySelector("#formMusica").addEventListener("submit", function(event){
@@ -44,4 +27,35 @@ async function postFormularioMusica(){
     await axios.post("/musica", novaMusica);
 
     console.log(novaMusica);
+}
+
+async function getMusicas(){
+    const response =  await axios.get("/musica");
+    if(response.status === 200){
+        const musicas = response.data;
+        const listasMusicas = document.querySelector("#tabelaMusica");
+        
+        musicas.forEach(musica => {
+            const linhaMusica = document.createElement("tr");
+            linhaMusica.id = `musica-${musica.id}`;
+           // linhaMusica.data = musica;
+            const tdNome = document.createElement("td");
+            const tdNomeAlbum = document.createElement("td");  
+            const tdAutorAlbum = document.createElement("td");
+            const tdAnoAlbum = document.createElement("td");
+
+            tdNome.innerText = musica.nome;
+            tdNomeAlbum.innerText = musica.nomeAlbum;
+            tdAutorAlbum.innerText = musica.autorAlbum;
+            tdAnoAlbum.innerText = musica.anoAlbum;
+
+            linhaMusica.appendChild(tdNome);
+            linhaMusica.appendChild(tdNomeAlbum);
+            linhaMusica.appendChild(tdAutorAlbum);
+            linhaMusica.appendChild(tdAnoAlbum);
+
+            listasMusicas.appendChild(linhaMusica);
+
+        });
+    }
 }
