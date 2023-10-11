@@ -55,7 +55,15 @@ async function getMusicas(){
             linhaMusica.appendChild(tdAnoAlbum);
 
             listasMusicas.appendChild(linhaMusica);
-
+            
+            // <tbody id="tabelaMusica"> 
+            //     <tr>
+            //         <td>Nome</td>
+            //         <td>Nome Album</td>
+            //         <td>Autor Album</td>
+            //         <td>Ano Album</td>
+            //     </tr>
+            // </tbody>
         });
     }
 }
