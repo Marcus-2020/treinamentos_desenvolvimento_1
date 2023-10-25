@@ -16,19 +16,22 @@
                 <form id="formMusica">
                     <div class="custom-container">
                         <h2>Nova Música</h2>
-                        <div>
+                        <div class="mb-1">
                             <input id="NomeMusica" type="text" name="Nome" value="" placeholder="Digite o nome">
                         </div>
-                        <div>
+                        <div class="mb-1">
                             <input id="NomeAlbum" type="text" name="Album" value="" placeholder="Digite o nome do Álbum">
                         </div>
-                        <div>
+                        <div class="mb-1">
                             <input id="AutorAlbum" type="text" name="Autor" value="" placeholder="Digite o Autor do Álbum">
                         </div>
                         <div>
                             <input id="AnoAlbum" type="number" name="Ano" value="" placeholder="Digite o Ano do Álbum">
                         </div>
-                        <button type="submit">Salvar Dados</button>
+                        <div class="d-flex flex-column w-100 align-items-center gap-1 mt-2">
+                            <button type="submit">Salvar Dados</button>
+                            <button class="secondary" type="reset">Limpar</button>
+                        </div>
                     </div>
                 </form>
             </div>

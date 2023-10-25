@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using CadastroMusica.Api.Entidades;
+using CadastroMusicas.Api.Entidades;
 using CadastroMusicas.Api.Repository;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,11 +16,22 @@ var app = builder.Build();
 
 app.UseCors();
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/api/musica", ([FromServices]MusicaRepository repository) => {
+    return repository.Get();
+});
 
 app.MapPost("/api/musica", ([FromServices]MusicaRepository repository, [FromBody]Musica musica) => {
     repository.Add(musica);
     return musica;
+});
+
+app.MapPut("/api/musica", ([FromServices]MusicaRepository repository, [FromBody]Musica musica) => {
+    repository.Update(musica);
+    return musica;
+});
+
+app.MapDelete("/api/musica", ([FromServices]MusicaRepository repository, [FromQuery]int id) => {
+    repository.Delete(id);
 });
 
 app.Run();
