@@ -48,6 +48,44 @@ namespace CadastroMusicas.Api.Repository
                 conexao?.Close();
             }
         }
+
+        public Musica Get(int id) 
+        {
+            MySqlConnection conexao = null;
+            try
+            {
+                Musica musica = null;
+                conexao = new MySqlConnection(_connectionString);
+                var sql = @"
+                  SELECT * FROM musica WHERE musica_id = @id
+                ";
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+                comando.Parameters.AddWithValue("@id", id);
+                conexao.Open();
+                MySqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    musica = new Musica
+                    {
+                        id = Convert.ToInt32(reader["musica_id"]),
+                        nome = reader["nome"].ToString(),
+                        nomeAlbum = reader["nome_album"].ToString(),
+                        autorAlbum = reader["autor_album"].ToString(),
+                        anoAlbum = Convert.ToInt32(reader["ano_album"])
+                    };
+                }
+
+                return musica;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexao?.Close();
+            }
+        }
         
         public void Add(Musica musica)
         {   
@@ -81,7 +119,7 @@ namespace CadastroMusicas.Api.Repository
             try
             {
                 conexao = new MySqlConnection(_connectionString);
-                var sql = "UPDATE musica SET nome = @nome, nome_album = @nome_album, autor_album = @autor_album, ano_album = @ano_album WHERE id = @id";
+                var sql = "UPDATE musica SET nome = @nome, nome_album = @nome_album, autor_album = @autor_album, ano_album = @ano_album WHERE musica_id = @id";
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
 
                 comando.Parameters.AddWithValue("@nome", musica.nome);
@@ -109,7 +147,7 @@ namespace CadastroMusicas.Api.Repository
             try
             {
                 conexao = new MySqlConnection(_connectionString);
-                var sql = "DELETE FROM musica WHERE id = @id";
+                var sql = "DELETE FROM musica WHERE musica_id = @id";
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
 
                 comando.Parameters.AddWithValue("@id", id);
