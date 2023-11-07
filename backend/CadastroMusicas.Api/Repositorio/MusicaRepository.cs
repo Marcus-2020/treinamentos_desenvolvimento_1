@@ -54,7 +54,8 @@ namespace CadastroMusicas.Api.Repository
             MySqlConnection conexao = null;
             try{
                 conexao = new MySqlConnection(_connectionString);
-                var sql = "INSERT INTO musica (nome, nome_album, autor_album, ano_album) VALUES (@nome, @nome_album, @autor_album, @ano_album)";
+                var sql = @"INSERT INTO musica (nome, nome_album, autor_album, ano_album) 
+                                VALUES (@nome, @nome_album, @autor_album, @ano_album)";
                 MySqlCommand comando = new MySqlCommand(sql, conexao);   
                 
                 comando.Parameters.AddWithValue("@nome",musica.nome); 
@@ -81,7 +82,10 @@ namespace CadastroMusicas.Api.Repository
             try
             {
                 conexao = new MySqlConnection(_connectionString);
-                var sql = "UPDATE musica SET nome = @nome, nome_album = @nome_album, autor_album = @autor_album, ano_album = @ano_album WHERE id = @id";
+                var sql = @"UPDATE musica
+                                SET nome = @nome, nome_album = @nome_album, 
+                                autor_album = @autor_album, ano_album = @ano_album 
+                            WHERE musica_id = @id";
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
 
                 comando.Parameters.AddWithValue("@nome", musica.nome);
@@ -109,7 +113,7 @@ namespace CadastroMusicas.Api.Repository
             try
             {
                 conexao = new MySqlConnection(_connectionString);
-                var sql = "DELETE FROM musica WHERE id = @id";
+                var sql = "DELETE FROM musica WHERE musica_id = @id";
                 MySqlCommand comando = new MySqlCommand(sql, conexao);
 
                 comando.Parameters.AddWithValue("@id", id);

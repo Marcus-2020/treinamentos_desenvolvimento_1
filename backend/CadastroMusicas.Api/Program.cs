@@ -30,7 +30,7 @@ app.MapPut("/api/musica", ([FromServices]MusicaRepository repository, [FromBody]
     return musica;
 });
 
-app.MapDelete("/api/musica", ([FromServices]MusicaRepository repository, [FromQuery]int id) => {
+app.MapDelete("/api/musica/{id}", ([FromServices]MusicaRepository repository, int id) => {
     repository.Delete(id);
 });
 
