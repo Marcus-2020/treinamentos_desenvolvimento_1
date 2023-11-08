@@ -27,37 +27,6 @@ h2 {
     width: 100%;
 }
 
-.custom-container button {
-    background-color: purple;
-    color: white;
-    border: 1px solid purple;
-    border-radius: 8px;
-    width: 70%;
-    padding: 8px;
-    font-weight: 500;
-}
-
-.custom-container button:hover {
-    background-color: rgb(71, 1, 71);
-    color: white;
-    cursor: pointer;
-}
-
-.custom-container button.secondary {
-    background-color: white;
-    color: purple;
-    border: 1px solid purple;
-    border-radius: 8px;
-    width: 70%;
-    padding: 2px 8px;
-}
-
-.custom-container button.secondary:hover {
-    background-color: rgb(61, 61, 61);
-    color: white;
-    cursor: pointer;
-}
-
 .thead-purple {
     background-color: purple;
     color: white;
