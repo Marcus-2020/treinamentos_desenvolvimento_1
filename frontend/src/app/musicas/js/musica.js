@@ -1,12 +1,6 @@
-axios.defaults.baseURL = 'http://localhost:5259/api';
-
-document.addEventListener("DOMContentLoaded", async function() {
-    await renderizaTabelaMusicas();
-    document.querySelector("#formMusica").onsubmit = async function(event){
-        event.preventDefault();
-        await postFormularioMusica();
-    };
-});
+/**
+ * @typedef {{id: number, nome: string, nomeAlbum: string, nomeAutor: string, anoAlbum: number}} Musica
+ */
 
 async function postFormularioMusica(){
     const novaMusica = getMusicaFromForm();
@@ -45,6 +39,10 @@ async function deleteFormularioMusica(){
     }
 }
 
+/**
+ * Retorna todas as músicas cadastradas.
+ * @returns {Promise<Musica[]>}
+ */
 async function getMusicas() {  
     const response =  await axios.get("/musica");
     if (response.status === 200) {
@@ -162,4 +160,37 @@ function formNovaMusica(formTitulo, btnLimpar, btnExcluir, btnCancelar){
     btnLimpar.classList.remove("d-none");
     btnExcluir.classList.add("d-none");
     btnCancelar.classList.add("d-none");
+}
+
+async function loadIndex() {
+    const main = document.querySelector("#main");
+    main.innerHTML = "";
+
+    const tableDiv = document.createElement("div");
+    await renderHtml("./app/musicas/html/index.html", tableDiv);
+    await renderHtml("./app/musicas/html/table.html", tableDiv.querySelector("#musicasBody"));
+    tableDiv.querySelector("#btnAdicionarMusica").onclick = async function() {
+        loadMusicaCreateForm().then(view => {
+            const main = document.querySelector("#musicasBody");
+            main.innerHTML = "";
+            main.appendChild(view);
+        });
+    };   
+
+    main.appendChild(tableDiv);
+}
+
+async function loadMusicaCreateForm() {
+    const musicaFormDiv = document.createElement("div");
+    musicaFormDiv.innerHTML = await getHtml("./app/musicas/html/create.html");
+    musicaFormDiv.querySelector("#formInputs").innerHTML = await getHtml("./app/musicas/html/form.html");
+    musicaFormDiv.querySelector("#formMusicaCreate").addEventListener("submit", function(event){
+        event.preventDefault();
+        postFormularioMusica();
+    });
+    musicaFormDiv.querySelector("#formMusicaCreateCancel").addEventListener("click", async function(){
+        await loadIndex();
+    });
+
+    return musicaFormDiv.querySelector("#formulario");
 }
