@@ -15,3 +15,13 @@ o processo de migração de um para outro. Também a arquitetura de pastas sera 
 
 O frontend começa com um único arquivo HTML, CSS e JS (index) e pode vir a evoluir para uma estrutura que comporte mais arquivos de forma organizada e funcione como um SPA, usando outros arquivos 
 HTML, CSS e JS como componentes para montar a interface.
+
+## Para rodar o projeto
+- Backend:
+  1. Tenha o .NET 7 instalado
+  2. Use o terminal para navegar até a pasta backend/CadastroMusicas.Api
+  3. Rode o comando `dotnet watch run`
+
+- Frontend:
+  1. Tenha o VS Code com a extensão Live Server instalada
+  2. Use o botão na barra de status ou o comando `Ctrl + Shift + P` e digite `Live Server: Open with Live Server`
