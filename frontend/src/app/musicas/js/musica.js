@@ -7,7 +7,7 @@ async function postFormularioMusica(){
     limpaFormularioMusica();
     const res = await axios.post("/musica", novaMusica);
     if (res.status === 200) { 
-        await renderizaTabelaMusicas();
+        await loadIndex();
     }
 }
 
@@ -22,7 +22,7 @@ async function putFormularioMusica(){
     const res = await axios.put("/musica", novaMusica);
     if (res.status === 200) { 
         limpaFormularioMusica();
-        await renderizaTabelaMusicas();
+        await loadIndex();
     }
 }
 
@@ -35,7 +35,7 @@ async function deleteFormularioMusica(){
     const res = await axios.delete(`/musica/${musicaId}`);
     if (res.status === 200) { 
         limpaFormularioMusica();
-        await renderizaTabelaMusicas();
+        await loadIndex();
     }
 }
 
@@ -87,15 +87,12 @@ async function renderizaTabelaMusicas(){
 
 function onLinhaMusicaClicked(event) {
     const musica = event.currentTarget.data;
-
-    const form = document.querySelector("#formMusica");
-    form.onsubmit = function(event) {
-        event.preventDefault();
-        putFormularioMusica();
-    }
-
-    formEditarMusica();
-    preencheFormularioMusica(musica);
+    loadMusicaEditForm().then(view => {
+        const main = document.querySelector("#musicasBody");
+        main.innerHTML = "";
+        main.appendChild(view);
+        preencheFormularioMusica(musica);
+    });
 }
 
 function preencheFormularioMusica(musica) {
@@ -107,7 +104,8 @@ function preencheFormularioMusica(musica) {
 }
 
 function getMusicaFromForm() {
-    const musicaId = parseInt(document.querySelector("#MusicaId").value) ?? 0;
+    let ehCreate = document.querySelector("#formMusicaCreate");
+    const musicaId = ehCreate ? 0 : parseInt(document.querySelector("#MusicaId").value);
     const nomeMusica = document.querySelector("#NomeMusica").value;
     const nomeAlbum = document.querySelector("#NomeAlbum").value;
     const autorAlbum = document.querySelector("#AutorAlbum").value;
@@ -125,33 +123,12 @@ function getMusicaFromForm() {
 }
 
 function limpaFormularioMusica() {
-    document.querySelector("#MusicaId").value = "";
+    let ehCreate = document.querySelector("#formMusicaCreate");
+    if (!ehCreate) document.querySelector("#MusicaId").value = "";
     document.querySelector("#NomeMusica").value = "";
     document.querySelector("#NomeAlbum").value = "";
     document.querySelector("#AutorAlbum").value = "";
     document.querySelector("#AnoAlbum").value = "";
-}
-
-function formEditarMusica(){
-    const formTitulo = document.querySelector("#formTitulo");
-    formTitulo.innerHTML = "Editar Música";
-
-    const btnLimpar = document.querySelector("#btnLimpar");
-    btnLimpar.classList.add("d-none");
-
-    const btnExcluir = document.querySelector("#btnExcluir");
-    btnExcluir.classList.remove("d-none");
-    btnExcluir.onclick = async function() {
-        await deleteFormularioMusica();
-    }
-
-    const btnCancelar = document.querySelector("#btnCancelar");
-    btnCancelar.classList.remove("d-none");
-    btnCancelar.onclick = function(event) {
-        event.preventDefault();
-        formNovaMusica(formTitulo, btnLimpar, btnExcluir, btnCancelar);
-        renderizaTabelaMusicas();
-    }
 }
 
 function formNovaMusica(formTitulo, btnLimpar, btnExcluir, btnCancelar){
@@ -178,6 +155,7 @@ async function loadIndex() {
     };   
 
     main.appendChild(tableDiv);
+    await renderizaTabelaMusicas();
 }
 
 async function loadMusicaCreateForm() {
@@ -190,6 +168,24 @@ async function loadMusicaCreateForm() {
     });
     musicaFormDiv.querySelector("#formMusicaCreateCancel").addEventListener("click", async function(){
         await loadIndex();
+    });
+
+    return musicaFormDiv.querySelector("#formulario");
+}
+
+async function loadMusicaEditForm() {
+    const musicaFormDiv = document.createElement("div");
+    await renderHtml("./app/musicas/html/edit.html", musicaFormDiv);
+    await renderHtml("./app/musicas/html/form.html", musicaFormDiv.querySelector("#formInputs"));
+    musicaFormDiv.querySelector("#formMusicaEdit").addEventListener("submit", function(event){
+        event.preventDefault();
+        putFormularioMusica();
+    });
+    musicaFormDiv.querySelector("#formMusicaEditCancel").addEventListener("click", async function(){
+        await loadIndex();
+    });
+    musicaFormDiv.querySelector("#formMusicaEditDelete").addEventListener("click", async function(){
+        await deleteFormularioMusica();
     });
 
     return musicaFormDiv.querySelector("#formulario");
