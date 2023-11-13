@@ -1,9 +1,3 @@
-//#region API
-
-
-
-//#endregion
-
 //#region Renderização
 
 /**
@@ -47,7 +41,7 @@ function renderizaTabelaMusicas(musicas){
 /**
  * Handles the click event on a music row.
  * 
- * @param {EventWithTargetData} event - The click event.
+ * @param {EventWithMusica} event - The click event.
  */
 function onLinhaMusicaClicked(event) {
     const musica = event.currentTarget.data;

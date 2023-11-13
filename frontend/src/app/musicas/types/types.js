@@ -17,5 +17,5 @@
  */
 
 /**
- * @typedef {Event & EventMusica} EventWithTargetData
+ * @typedef {Event & EventMusica} EventWithMusica
  */
