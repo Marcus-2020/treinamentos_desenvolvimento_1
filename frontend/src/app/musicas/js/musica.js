@@ -7,7 +7,7 @@ async function postFormularioMusica(){
     limpaFormularioMusica();
     const res = await axios.post("/musica", novaMusica);
     if (res.status === 200) { 
-        await renderizaTabelaMusicas();
+        await loadIndex();
     }
 }
 
@@ -22,7 +22,7 @@ async function putFormularioMusica(){
     const res = await axios.put("/musica", novaMusica);
     if (res.status === 200) { 
         limpaFormularioMusica();
-        await renderizaTabelaMusicas();
+        await loadIndex();
     }
 }
 
@@ -35,7 +35,7 @@ async function deleteFormularioMusica(){
     const res = await axios.delete(`/musica/${musicaId}`);
     if (res.status === 200) { 
         limpaFormularioMusica();
-        await renderizaTabelaMusicas();
+        await loadIndex();
     }
 }
 
@@ -51,7 +51,7 @@ async function getMusicas() {
 }
 
 
-async function renderizaTabelaMusicas(){
+async function renderizaTabelaMusicas() {
     const musicas = await getMusicas();
     const listasMusicas = document.querySelector("#tabelaMusica");
 
@@ -87,15 +87,12 @@ async function renderizaTabelaMusicas(){
 
 function onLinhaMusicaClicked(event) {
     const musica = event.currentTarget.data;
-
-    const form = document.querySelector("#formMusica");
-    form.onsubmit = function(event) {
-        event.preventDefault();
-        putFormularioMusica();
-    }
-
-    formEditarMusica();
-    preencheFormularioMusica(musica);
+    loadMusicaEditForm().then((view) => {
+        const body = document.querySelector("#musicasBody");
+        body.innerHTML = "";
+        body.appendChild(view);
+        preencheFormularioMusica(musica);
+    });
 }
 
 function preencheFormularioMusica(musica) {
@@ -107,7 +104,8 @@ function preencheFormularioMusica(musica) {
 }
 
 function getMusicaFromForm() {
-    const musicaId = parseInt(document.querySelector("#MusicaId").value) ?? 0;
+    const ehNovaMusica = document.querySelector("#formMusicaCreate");
+    const musicaId = ehNovaMusica ? 0 : parseInt(document.querySelector("#MusicaId").value);
     const nomeMusica = document.querySelector("#NomeMusica").value;
     const nomeAlbum = document.querySelector("#NomeAlbum").value;
     const autorAlbum = document.querySelector("#AutorAlbum").value;
@@ -125,7 +123,8 @@ function getMusicaFromForm() {
 }
 
 function limpaFormularioMusica() {
-    document.querySelector("#MusicaId").value = "";
+    const ehNovaMusica = document.querySelector("#formMusicaCreate");
+    if (!ehNovaMusica) document.querySelector("#MusicaId").value = "";
     document.querySelector("#NomeMusica").value = "";
     document.querySelector("#NomeAlbum").value = "";
     document.querySelector("#AutorAlbum").value = "";
@@ -170,27 +169,45 @@ async function loadIndex() {
     await renderHtml("./app/musicas/html/index.html", tableDiv);
     await renderHtml("./app/musicas/html/table.html", tableDiv.querySelector("#musicasBody"));
     tableDiv.querySelector("#btnAdicionarMusica").onclick = async function() {
-        loadMusicaCreateForm().then(view => {
-            const main = document.querySelector("#musicasBody");
-            main.innerHTML = "";
-            main.appendChild(view);
-        });
+        const view = await loadMusicaCreateForm();
+        const body = document.querySelector("#musicasBody");
+        body.innerHTML = "";
+        body.appendChild(view);
     };   
 
     main.appendChild(tableDiv);
+    await renderizaTabelaMusicas();
 }
 
 async function loadMusicaCreateForm() {
     const musicaFormDiv = document.createElement("div");
     musicaFormDiv.innerHTML = await getHtml("./app/musicas/html/create.html");
     musicaFormDiv.querySelector("#formInputs").innerHTML = await getHtml("./app/musicas/html/form.html");
-    musicaFormDiv.querySelector("#formMusicaCreate").addEventListener("submit", function(event){
+    musicaFormDiv.querySelector("#formMusicaCreate").addEventListener("submit", async function(event){
         event.preventDefault();
-        postFormularioMusica();
+        await postFormularioMusica();
     });
     musicaFormDiv.querySelector("#formMusicaCreateCancel").addEventListener("click", async function(){
         await loadIndex();
     });
+
+    return musicaFormDiv.querySelector("#formulario");
+}
+
+async function loadMusicaEditForm() {
+    const musicaFormDiv = document.createElement("div");
+    await renderHtml("./app/musicas/html/edit.html", musicaFormDiv);
+    await renderHtml("./app/musicas/html/form.html", musicaFormDiv.querySelector("#formInputs"))
+    musicaFormDiv.querySelector("#formMusicaEdit").onsubmit = async (event) => {
+        event.preventDefault();
+        await putFormularioMusica();
+    }
+    musicaFormDiv.querySelector("#formMusicaEditCancel").onclick = async () => {
+        await loadIndex();
+    }
+    musicaFormDiv.querySelector("#formMusicaEditDelete").onclick = async () => {
+        await deleteFormularioMusica();
+    }
 
     return musicaFormDiv.querySelector("#formulario");
 }
