@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ycJbtZTX1d3jV/HLesIow8DzsLL6gK/s8daxI19ISpGylzJFPiFWyUoXN3k2ZEEQJS1Yra3bDYGVsP/RzZwIDg==",
+  "success": true,
+  "projectFilePath": "C:\\Trabalho\\Sommus\\treinamentos\\treinamentos_desenvolvimento_1\\backend\\CadastroMusicas.Domain\\CadastroMusicas.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,13 @@
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Domain\bin\Debug\net7.0\CadastroMusicas.Domain.deps.json
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Domain\bin\Debug\net7.0\CadastroMusicas.Domain.dll
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Domain\bin\Debug\net7.0\CadastroMusicas.Domain.pdb
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Domain\obj\Debug\net7.0\CadastroMusicas.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Domain\obj\Debug\net7.0\CadastroMusicas.Domain.AssemblyInfoInputs.cache
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Domain\obj\Debug\net7.0\CadastroMusicas.Domain.AssemblyInfo.cs
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Domain\obj\Debug\net7.0\CadastroMusicas.Domain.csproj.CoreCompileInputs.cache
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Domain\obj\Debug\net7.0\CadastroMusicas.Domain.sourcelink.json
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Domain\obj\Debug\net7.0\CadastroMusicas.Domain.dll
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Domain\obj\Debug\net7.0\refint\CadastroMusicas.Domain.dll
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Domain\obj\Debug\net7.0\CadastroMusicas.Domain.pdb
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Domain\obj\Debug\net7.0\ref\CadastroMusicas.Domain.dll
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Domain\obj\Debug\net7.0\CadastroMusicas.Domain.csproj.AssemblyReference.cache

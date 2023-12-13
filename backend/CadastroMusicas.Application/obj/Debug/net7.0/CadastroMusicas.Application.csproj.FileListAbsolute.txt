@@ -1,0 +1,16 @@
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\obj\Debug\net7.0\CadastroMusicas.Application.csproj.AssemblyReference.cache
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\obj\Debug\net7.0\CadastroMusicas.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\obj\Debug\net7.0\CadastroMusicas.Application.AssemblyInfoInputs.cache
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\obj\Debug\net7.0\CadastroMusicas.Application.AssemblyInfo.cs
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\obj\Debug\net7.0\CadastroMusicas.Application.csproj.CoreCompileInputs.cache
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\obj\Debug\net7.0\CadastroMusicas.Application.sourcelink.json
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\bin\Debug\net7.0\CadastroMusicas.Application.deps.json
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\bin\Debug\net7.0\CadastroMusicas.Application.dll
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\bin\Debug\net7.0\CadastroMusicas.Application.pdb
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\bin\Debug\net7.0\CadastroMusicas.Domain.dll
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\bin\Debug\net7.0\CadastroMusicas.Domain.pdb
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\obj\Debug\net7.0\CadastroMusicas.Application.csproj.CopyComplete
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\obj\Debug\net7.0\CadastroMusicas.Application.dll
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\obj\Debug\net7.0\refint\CadastroMusicas.Application.dll
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\obj\Debug\net7.0\CadastroMusicas.Application.pdb
+C:\Trabalho\Sommus\treinamentos\treinamentos_desenvolvimento_1\backend\CadastroMusicas.Application\obj\Debug\net7.0\ref\CadastroMusicas.Application.dll

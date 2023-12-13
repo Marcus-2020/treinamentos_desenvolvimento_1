@@ -5,6 +5,14 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroMusicas.Api", "CadastroMusicas.Api\CadastroMusicas.Api.csproj", "{5A573672-10B1-49F0-8D06-6BB818B46DDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroMusicas.Application", "CadastroMusicas.Application\CadastroMusicas.Application.csproj", "{428CEC95-8D05-4B86-A1EB-C6642F5508CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroMusicas.Domain", "CadastroMusicas.Domain\CadastroMusicas.Domain.csproj", "{D600D054-F855-4D8D-ABBD-239678036CEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroMusicas.Data", "CadastroMusicas.Data\CadastroMusicas.Data.csproj", "{3E868F57-ABD0-4360-9126-FFA112A8BC98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroMusicas.Infra", "CadastroMusicas.Infra\CadastroMusicas.Infra.csproj", "{3D4002AA-878A-4E3F-81FB-864BF92269FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +26,25 @@ Global
 		{5A573672-10B1-49F0-8D06-6BB818B46DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A573672-10B1-49F0-8D06-6BB818B46DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A573672-10B1-49F0-8D06-6BB818B46DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33D86B3B-79A1-42BB-9589-FAEF638366F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D86B3B-79A1-42BB-9589-FAEF638366F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D86B3B-79A1-42BB-9589-FAEF638366F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D86B3B-79A1-42BB-9589-FAEF638366F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{428CEC95-8D05-4B86-A1EB-C6642F5508CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{428CEC95-8D05-4B86-A1EB-C6642F5508CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{428CEC95-8D05-4B86-A1EB-C6642F5508CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{428CEC95-8D05-4B86-A1EB-C6642F5508CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D600D054-F855-4D8D-ABBD-239678036CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D600D054-F855-4D8D-ABBD-239678036CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D600D054-F855-4D8D-ABBD-239678036CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D600D054-F855-4D8D-ABBD-239678036CEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E868F57-ABD0-4360-9126-FFA112A8BC98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E868F57-ABD0-4360-9126-FFA112A8BC98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E868F57-ABD0-4360-9126-FFA112A8BC98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E868F57-ABD0-4360-9126-FFA112A8BC98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D4002AA-878A-4E3F-81FB-864BF92269FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D4002AA-878A-4E3F-81FB-864BF92269FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D4002AA-878A-4E3F-81FB-864BF92269FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D4002AA-878A-4E3F-81FB-864BF92269FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
